@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var y = prompt("year");
+var m = prompt("month");
+var d = prompt("day");
+var h = prompt("hour");
+var min = prompt("minutes");
+var sec = prompt("seconds");
+var milli = prompt("milliseconds");
+var div4 = document.createElement("div")
+div4.setAttribute("class","a" );
+div4.querySelector(".a");
+var div3 = document.createElement("div")
+div3.setAttribute("class","a" );
+div3.querySelector(".a");
+var div2 = document.createElement("div")
+div2.setAttribute("class","a" );
+div2.querySelector(".a");
+var div1 = document.createElement("div")
+div1.setAttribute("class","a" );
+div1.querySelector(".a");
+
+var div5 = document.createElement("div")
+div5.setAttribute("class","a" );
+div5.querySelector(".a");
+
+
+function startTime() {
+var birth = new Date(y, m, d, h, min, sec, milli);
+var today = new Date(Date.now());
+var age = today.getFullYear()-birth.getFullYear() 
+var month=(Math.abs(birth.getMonth()-today.getMonth())) 
+var min_diff =(Math.abs (today.getMinutes() - birth.getMinutes()));  
+var sec_diff = (Math.abs (today.getSeconds() - birth.getSeconds())); 
+var milli_diff = (Math.abs (today.getTime() -  birth.getTime()));
+ console.log(age)//24 years
+console.log(month)
+console.log(min_diff);  
+console.log(sec_diff);   
+console.log(milli_diff);
+
+div1.innerHTML="Year Difference " +age;
+document.body.appendChild(div1);
+
+div2.innerHTML="Month Difference " +month;
+document.body.appendChild(div2);
+
+div3.innerHTML="Minutes Difference " +min_diff;
+document.body.appendChild(div3);
+
+div4.innerHTML="Seconds Difference " +sec_diff;
+document.body.appendChild(div4);
+
+
+div5.innerHTML="Milli Second Difference " +milli_diff;
+document.body.appendChild(div5);
+  setTimeout(startTime, 500);
+}
+</script>
+</head>
+
+<body onload="startTime()">
+</body>
+</html>
